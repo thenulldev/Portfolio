@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import avatar from "../public/avatar.png";
 import {
   faDiscord,
@@ -11,7 +10,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 export default function Home() {
@@ -23,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className="">
         <div className="mt-32">
           <figure className="p-8 md:flex bg-slate-100 rounded-xl md:p-0 dark:bg-slate-800">
             <Image
