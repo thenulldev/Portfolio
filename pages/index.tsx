@@ -31,7 +31,7 @@ export default function Home() {
             />
             <div className="pt-6 space-y-4 text-center md:p-8 md:text-left">
               <blockquote>
-                <p className="text-lg font-medium">
+                <p className="font-medium text-md">
                   I like waffles and making software
                 </p>
               </blockquote>
@@ -39,34 +39,54 @@ export default function Home() {
                 <div className="text-sky-500 dark:text-sky-400">
                   Stephen Freerking
                 </div>
-                <div className="text-slate-700 dark:text-slate-500">
+                <div className="text-xs text-slate-700 dark:text-slate-500">
                   Software Engineer
                 </div>
               </figcaption>
-              <div className="flex justify-between w-2/4">
-                <Link href="#">
-                  <FontAwesomeIcon className="" icon={faDiscord} />
-                </Link>
-                <Link href="https://github.com/snipey">
-                  <FontAwesomeIcon className="" icon={faGithub} />
-                </Link>
-                <Link href="https://linkedin.com/in/stephenfdev">
-                  <FontAwesomeIcon className="" icon={faLinkedin} />
-                </Link>
-                <Link href="https://twitter.com/snipeydev">
-                  <FontAwesomeIcon className="" icon={faTwitter} />
-                </Link>
-                <Link href="https://fosstodon.org/@StephenDev">
-                  <FontAwesomeIcon className="" icon={faMastodon} />
-                </Link>
-                <Link href="https://paypal.me/snipeydev">
-                  <FontAwesomeIcon className="" icon={faPaypal} />
-                </Link>
-              </div>
+              <Social />
             </div>
           </figure>
         </div>
       </main>
+    </div>
+  );
+}
+
+export function Social() {
+  let socials = [
+    {
+      link: "https://github.com/snipey",
+      icon: faGithub,
+    },
+    {
+      link: "https://linkedin.com/in/stephenfdev",
+      icon: faLinkedin,
+    },
+    {
+      link: "https://twitter.com/snipeydev",
+      icon: faTwitter,
+    },
+    {
+      link: "https://fosstodon.org/@StephenDev",
+      icon: faMastodon,
+    },
+    {
+      link: "https://paypal.me/snipeydev",
+      icon: faPaypal,
+    },
+  ];
+
+  return (
+    <div className="flex justify-between w-full">
+      {socials.map((social, index) => (
+        <Link key={index} href={social.link}>
+          <FontAwesomeIcon
+            className="hover:fill-blue-600"
+            icon={social.icon}
+            size="2x"
+          />
+        </Link>
+      ))}
     </div>
   );
 }
