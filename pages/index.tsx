@@ -77,13 +77,13 @@ export function Social() {
   ];
 
   return (
-    <div className="flex justify-between w-full">
+    <div className="flex justify-between w-2/3">
       {socials.map((social, index) => (
         <Link key={index} href={social.link}>
           <FontAwesomeIcon
             className="hover:fill-blue-600"
             icon={social.icon}
-            size="2x"
+            size="1x"
           />
         </Link>
       ))}
