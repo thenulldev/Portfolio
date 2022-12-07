@@ -64,10 +64,10 @@ export function Repos({
                       <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
                         {repo.primaryLanguage.name}
                       </h2>
-                      <h1 className="mb-3 text-lg font-medium dark:text-white title-font text-slate-800">
+                      <h1 className="mb-3 text-lg font-medium text-white title-font dark:text-slate-800">
                         <Link href={repo.url}>{repo.name}</Link>
                       </h1>
-                      <p className="mb-3 leading-relaxed dark:text-white text-slate-800">
+                      <p className="mb-3 leading-relaxed text-white dark:text-slate-800">
                         {repo.description}
                       </p>
                     </div>
