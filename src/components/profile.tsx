@@ -3,7 +3,7 @@ import avatar from "@images/avatar.png";
 import Social from "@components/social";
 export default function Profile() {
   return (
-    <figure className="object-left mt-8 md:flex bg-slate-100 rounded-xl md:p-0 dark:bg-slate-800">
+    <figure className="object-left mt-8 md:flex bg-slate-100 rounded-xl md:p-0">
       <Image
         className="w-full h-56 mx-auto rounded-xl md:h-auto md:w-56"
         src={avatar}
