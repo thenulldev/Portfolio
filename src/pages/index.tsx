@@ -17,15 +17,15 @@ export default function Home({
         <title>Stephen Freerking | The Null Dev</title>
         <meta name="description" content="30 - Software Engineer" />
       </Head>
-      <div className="flex flex-col bg-slate-900 main-body">
+      <div>
         <div className="container mx-auto md:p-8 md:text-left">
           <div className="flex justify-center">
             <Profile />
           </div>
           <Repos pinned={pinned} />
         </div>
-        <footer className="w-full m-4 font-bold text-center text-white">
-          Made with ♥️ by Stephen F 2022
+        <footer className="w-full p-4 font-bold text-center text-white">
+          Made with <span className="text-red-600">♥️</span> by Stephen F 2022
         </footer>
       </div>
     </>

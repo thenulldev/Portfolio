@@ -6,7 +6,7 @@
   html,
   body,
   #__next {
-    @apply flex flex-col h-full;
+    @apply flex flex-col h-full bg-slate-900;
   }
 }
 
