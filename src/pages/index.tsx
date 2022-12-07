@@ -7,6 +7,7 @@ import Profile from "@components/profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCodeFork, faStar } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Snow from "@components/particles";
 
 export default function Home({
   pinned,
@@ -18,7 +19,7 @@ export default function Home({
         <meta name="description" content="30 - Software Engineer" />
       </Head>
       <div>
-        <div className="container mx-auto md:p-8 md:text-left">
+        <div className="container flex-grow mx-auto md:p-8 md:text-left">
           <div className="flex justify-center">
             <Profile />
           </div>
@@ -27,6 +28,7 @@ export default function Home({
         <footer className="w-full p-4 font-bold text-center text-white">
           Made with <span className="text-red-600">♥️</span> by Stephen F 2022
         </footer>
+        <Snow />
       </div>
     </>
   );

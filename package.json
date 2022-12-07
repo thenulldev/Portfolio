@@ -21,6 +21,11 @@
     "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-tsparticles": "^2.6.0",
+    "tslib": "^2.4.1",
+    "tsparticles": "^2.6.0",
+    "tsparticles-engine": "^2.6.0",
+    "tsparticles-preset-snow": "^2.6.0",
     "typescript": "4.9.3"
   },
   "devDependencies": {
