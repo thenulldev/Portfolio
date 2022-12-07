@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-export function Social() {
+export default function Social() {
   let socials = [
     {
       link: "https://github.com/snipey",

@@ -2,8 +2,8 @@ import Head from "next/head";
 
 import { getUsersPinnedRepositories } from "./api/gql";
 import { InferGetStaticPropsType } from "next/types";
-import { Repos } from "./components/repos";
-import { Profile } from "./components/profile";
+import Repos from "./components/repos";
+import Profile from "./components/profile";
 
 export default function Home({
   pinned,

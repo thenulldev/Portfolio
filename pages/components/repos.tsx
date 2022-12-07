@@ -3,7 +3,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { InferGetStaticPropsType } from "next";
 import { getServerSideProps } from "..";
 
-export function Repos({
+export default function Repos({
   pinned,
 }: InferGetStaticPropsType<typeof getServerSideProps>) {
   return (

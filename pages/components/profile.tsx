@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Social } from "./social";
 import avatar from "../../public/avatar.png";
-export function Profile() {
+import Social from "./social";
+export default function Profile() {
   return (
     <figure className="object-left mt-8 md:flex bg-slate-100 rounded-xl md:p-0 dark:bg-slate-800">
       <Image
