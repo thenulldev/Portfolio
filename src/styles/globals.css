@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-main-body {
-    height: 100vh;
+@layer base {
+  html,
+  body,
+  #__next {
+    @apply flex flex-col h-full bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-100;
+  }
 }

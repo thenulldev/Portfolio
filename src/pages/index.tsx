@@ -17,7 +17,7 @@ export default function Home({
         <title>Stephen Freerking | The Null Dev</title>
         <meta name="description" content="30 - Software Engineer" />
       </Head>
-      <div className="flex flex-col h-full bg-slate-900 main-body">
+      <div className="flex flex-col bg-slate-900 main-body">
         <div className="container mx-auto md:p-8 md:text-left">
           <div className="flex justify-center">
             <Profile />
