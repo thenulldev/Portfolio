@@ -24,7 +24,7 @@ export default function Home({
           </div>
           <Repos pinned={pinned} />
         </div>
-        <footer className="w-full font-bold text-center text-white">
+        <footer className="w-full m-4 font-bold text-center text-white">
           Made with ♥️ by Stephen F 2022
         </footer>
       </div>
@@ -64,10 +64,10 @@ export function Repos({
                       <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
                         {repo.primaryLanguage.name}
                       </h2>
-                      <h1 className="mb-3 text-lg font-medium text-white title-font dark:text-slate-800">
+                      <h1 className="mb-3 text-lg font-medium title-font text-slate-800">
                         <Link href={repo.url}>{repo.name}</Link>
                       </h1>
-                      <p className="mb-3 leading-relaxed text-white dark:text-slate-800">
+                      <p className="mb-3 leading-relaxed text-slate-800">
                         {repo.description}
                       </p>
                     </div>
