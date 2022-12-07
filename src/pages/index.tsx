@@ -5,7 +5,8 @@ import { InferGetStaticPropsType } from "next/types";
 import Profile from "@components/profile";
 // import Repos from "@components/repos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCodeFork, faStar } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function Home({
   pinned,
@@ -58,27 +59,34 @@ export function Repos({
                 className="w-full p-4 lg:w-1/3 md:w-1/2 xl:w-1/4"
               >
                 <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg bg-slate-100 border-opacity-60">
-                  <div className="p-6">
-                    <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
-                      {repo.primaryLanguage.name}
-                    </h2>
-                    <h1 className="mb-3 text-lg font-medium dark:text-white title-font">
-                      Name: {repo.name}
-                    </h1>
-                    <p className="mb-3 leading-relaxed dark:text-white">
-                      {repo.description}
-                    </p>
-                    <div className="flex flex-wrap items-center ">
+                  <div className="flex flex-col justify-between h-full p-6 ">
+                    <div>
+                      <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
+                        {repo.primaryLanguage.name}
+                      </h2>
+                      <h1 className="mb-3 text-lg font-medium dark:text-white title-font">
+                        <Link href={repo.url}>{repo.name}</Link>
+                      </h1>
+                      <p className="mb-3 leading-relaxed dark:text-white">
+                        {repo.description}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap items-center">
                       <a className="inline-flex items-center text-indigo-500 md:mb-2 lg:mb-0"></a>
-                      <span className="inline-flex items-center py-1 pr-3 ml-auto mr-3 text-sm leading-none border-r-2 border-gray-200 text-slate-500 dark:text-gray-400 lg:ml-auto md:ml-0">
+                      <span className="inline-flex py-1 pr-3 ml-auto mr-3 text-sm leading-none border-r-2 border-gray-200 text-slate-500 dark:text-gray-400 lg:ml-auto md:ml-0">
                         <FontAwesomeIcon
-                          className="hover:fill-blue-600"
+                          className="pr-1 hover:fill-blue-600"
                           icon={faStar}
                           size="sm"
                         />
                         {repo.stargazerCount}
                       </span>
-                      <span className="inline-flex items-center text-sm leading-none text-slate-500 dark:text-gray-400">
+                      <span className="inline-flex text-sm leading-none text-slate-500 dark:text-gray-400">
+                        <FontAwesomeIcon
+                          className="pr-1 hover:fill-red-600"
+                          icon={faCodeFork}
+                          size="sm"
+                        />
                         {repo.forkCount}
                       </span>
                     </div>
