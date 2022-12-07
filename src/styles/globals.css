@@ -9,3 +9,9 @@
     @apply flex flex-col h-full;
   }
 }
+
+@layer components {
+    svg {
+        @apply transition hover:text-blue-600;
+    }
+}
