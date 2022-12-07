@@ -11,7 +11,7 @@ export default function Profile() {
       />
       <div className="p-8 pt-6 space-y-4 text-center md:text-left">
         <blockquote>
-          <p className="font-medium text-md text-slate-800 dark:text-slate-500">
+          <p className="font-medium text-md text-slate-800">
             I like waffles and making software
           </p>
         </blockquote>
@@ -19,9 +19,7 @@ export default function Profile() {
           <div className="text-sky-500 dark:text-sky-400">
             Stephen Freerking
           </div>
-          <div className="text-xs text-slate-700 dark:text-slate-500">
-            Software Engineer
-          </div>
+          <div className="text-xs text-slate-700">Software Engineer</div>
         </figcaption>
         <Social />
       </div>
