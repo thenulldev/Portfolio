@@ -5,12 +5,12 @@ export default function Profile() {
   return (
     <figure className="object-left mt-8 md:flex bg-slate-100 rounded-xl md:p-0">
       <Image
-        className="w-full h-56 mx-auto rounded-xl md:h-auto md:w-56"
+        className="object-cover w-full h-56 mx-auto rounded-xl md:h-auto md:w-56"
         src={avatar}
         alt=""
       />
-      <div className="p-8 pt-6 space-y-4 text-center md:text-left">
-        <blockquote>
+      <div className="flex flex-col p-8 pt-6 space-y-4 text-center md:text-left">
+        <blockquote className="flex-grow">
           <p className="font-medium text-md text-slate-800">
             I like waffles and making software
           </p>
