@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCodeFork, faStar } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Snow from "@components/particles";
+import Tree from "@components/tree";
 
 export default function Home({
   pinned,
@@ -24,6 +25,9 @@ export default function Home({
             <Profile />
           </div>
           <Repos pinned={pinned} />
+        </div>
+        <div className="flex justify-center">
+          <Tree />
         </div>
         <footer className="w-full p-4 font-bold text-center text-white">
           Made with <span className="text-red-600">♥️</span> by Stephen F 2022
