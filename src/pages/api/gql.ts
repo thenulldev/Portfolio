@@ -1,5 +1,3 @@
-import { Root } from "../types/github";
-
 export async function getUsersPinnedRepositories(username: string) {
   const query = `
     {
@@ -48,4 +46,40 @@ export async function getUsersPinnedRepositories(username: string) {
     pushedAt: item.node.pushedAt,
     url: item.node.url,
   }));
+}
+
+export interface Root {
+  data: Data;
+}
+
+export interface Data {
+  user: User;
+}
+
+export interface User {
+  pinnedItems: PinnedItems;
+}
+
+export interface PinnedItems {
+  totalCount: number;
+  edges: Edge[];
+}
+
+export interface Edge {
+  node: Repo;
+}
+
+export interface Repo {
+  name: string;
+  description: string;
+  stargazerCount: number;
+  forkCount: number;
+  primaryLanguage: PrimaryLanguage;
+  pushedAt: string;
+  url: string;
+}
+
+export interface PrimaryLanguage {
+  name: string;
+  color: string;
 }

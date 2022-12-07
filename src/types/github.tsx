@@ -61,10 +61,10 @@ export interface PinnedItems {
 }
 
 export interface Edge {
-  node: Node;
+  node: Repo;
 }
 
-export interface Node {
+export interface Repo {
   name: string;
   description: string;
   stargazerCount: number;

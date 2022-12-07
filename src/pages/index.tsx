@@ -1,9 +1,46 @@
+import Head from "next/head";
+
+import { getUsersPinnedRepositories } from "./api/gql";
+import { InferGetStaticPropsType } from "next/types";
+import Profile from "@components/profile";
+// import Repos from "@components/repos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { InferGetStaticPropsType } from "next";
-import { getServerSideProps } from "..";
 
-export default function Repos({
+export default function Home({
+  pinned,
+}: InferGetStaticPropsType<typeof getServerSideProps>) {
+  return (
+    <>
+      <Head>
+        <title>Stephen Freerking | The Null Dev</title>
+        <meta name="description" content="30 - Software Engineer" />
+      </Head>
+      <div className="flex flex-col h-full bg-slate-900 main-body">
+        <div className="container mx-auto md:p-8 md:text-left">
+          <div className="flex justify-center">
+            <Profile />
+          </div>
+          <Repos pinned={pinned} />
+        </div>
+        <footer className="w-full font-bold text-center text-white">
+          Made with ♥️ by Stephen F 2022
+        </footer>
+      </div>
+    </>
+  );
+}
+
+export async function getServerSideProps() {
+  let pinned = await getUsersPinnedRepositories("Snipey");
+  return {
+    props: {
+      pinned,
+    },
+  };
+}
+
+export function Repos({
   pinned,
 }: InferGetStaticPropsType<typeof getServerSideProps>) {
   return (
