@@ -35,7 +35,7 @@ export default function Social() {
   return (
     <div className="flex justify-between w-full">
       {socials.map((social, index) => (
-        <Link key={index} href={social.link}>
+        <Link rel="me" key={index} href={social.link}>
           <div className="hover:fill-blue-500">
             <FontAwesomeIcon icon={social.icon} size="2x" />
           </div>
