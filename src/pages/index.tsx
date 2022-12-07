@@ -64,10 +64,10 @@ export function Repos({
                       <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
                         {repo.primaryLanguage.name}
                       </h2>
-                      <h1 className="mb-3 text-lg font-medium dark:text-white title-font">
+                      <h1 className="mb-3 text-lg font-medium dark:text-white title-font text-slate-800">
                         <Link href={repo.url}>{repo.name}</Link>
                       </h1>
-                      <p className="mb-3 leading-relaxed dark:text-white">
+                      <p className="mb-3 leading-relaxed dark:text-white text-slate-800">
                         {repo.description}
                       </p>
                     </div>
@@ -83,7 +83,7 @@ export function Repos({
                       </span>
                       <span className="inline-flex text-sm leading-none text-slate-500 dark:text-gray-400">
                         <FontAwesomeIcon
-                          className="pr-1 hover:fill-red-600"
+                          className="pr-1"
                           icon={faCodeFork}
                           size="sm"
                         />

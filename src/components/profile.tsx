@@ -11,7 +11,7 @@ export default function Profile() {
       />
       <div className="p-8 pt-6 space-y-4 text-center md:text-left">
         <blockquote>
-          <p className="font-medium text-md">
+          <p className="font-medium text-md text-slate-800 dark:text-slate-500">
             I like waffles and making software
           </p>
         </blockquote>
