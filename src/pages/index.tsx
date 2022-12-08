@@ -74,7 +74,6 @@ function Repos({ pinned }: InferGetStaticPropsType<typeof getServerSideProps>) {
                             className="pr-1 hover:fill-blue-600"
                             icon={faStar}
                             size="sm"
-                            border
                           />
                           {repo.stargazerCount}
                         </span>
@@ -83,7 +82,6 @@ function Repos({ pinned }: InferGetStaticPropsType<typeof getServerSideProps>) {
                             className="pr-1"
                             icon={faCodeFork}
                             size="sm"
-                            border
                           />
                           {repo.forkCount}
                         </span>
