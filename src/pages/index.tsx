@@ -1,12 +1,12 @@
-import Head from "next/head";
-
-import { getUsersPinnedRepositories } from "./api/gql";
-import { InferGetStaticPropsType } from "next/types";
-import Profile from "@components/profile";
-// import Repos from "@components/repos";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCodeFork, faStar } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Head from "next/head";
+import { InferGetStaticPropsType } from "next";
+
+import { faStar, faCodeFork } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getUsersPinnedRepositories, Repo } from "@api/gql";
+
+import Profile from "@components/profile";
 import Snow from "@components/particles";
 import Tree from "@components/tree";
 
@@ -38,18 +38,7 @@ export default function Home({
   );
 }
 
-export async function getServerSideProps() {
-  let pinned = await getUsersPinnedRepositories("Snipey");
-  return {
-    props: {
-      pinned,
-    },
-  };
-}
-
-export function Repos({
-  pinned,
-}: InferGetStaticPropsType<typeof getServerSideProps>) {
+function Repos({ pinned }: InferGetStaticPropsType<typeof getServerSideProps>) {
   return (
     <section className="my-8 text-gray-600 body-font">
       <div className="px-5 py-0 mx-auto">
@@ -85,6 +74,7 @@ export function Repos({
                             className="pr-1 hover:fill-blue-600"
                             icon={faStar}
                             size="sm"
+                            border
                           />
                           {repo.stargazerCount}
                         </span>
@@ -93,6 +83,7 @@ export function Repos({
                             className="pr-1"
                             icon={faCodeFork}
                             size="sm"
+                            border
                           />
                           {repo.forkCount}
                         </span>
@@ -106,4 +97,13 @@ export function Repos({
       </div>
     </section>
   );
+}
+
+export async function getServerSideProps() {
+  let pinned = await getUsersPinnedRepositories("Snipey");
+  return {
+    props: {
+      pinned,
+    },
+  };
 }
