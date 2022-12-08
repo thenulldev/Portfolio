@@ -24,6 +24,7 @@ export async function getUsersPinnedRepositories(username: string) {
       }
     }
   `;
+
   let token = process.env.GH_PAT;
   const data: Root = await fetch("https://api.github.com/graphql", {
     method: "POST",
