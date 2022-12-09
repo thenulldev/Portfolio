@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
-
+import GitHubCalendar from "react-github-calendar";
 import { faStar, faCodeFork } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getUsersPinnedRepositories, Repo } from "@api/gql";
@@ -9,6 +9,14 @@ import { getUsersPinnedRepositories, Repo } from "@api/gql";
 import Profile from "@components/profile";
 import Snow from "@components/particles";
 import Tree from "@components/tree";
+
+import { Roboto_Mono } from "@next/font/google";
+
+const roboto_mono = Roboto_Mono({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 export default function Home({
   pinned,
@@ -23,6 +31,9 @@ export default function Home({
         <div className="container flex-grow mx-auto md:p-8 md:text-left">
           <div className="flex justify-center">
             <Profile />
+          </div>
+          <div className="flex justify-center p-6 mx-6 mt-10 text-lg border-2 border-gray-200 rounded-lg lg:mx-32 xl:mx-60 bg-slate-100">
+            <GitHubCalendar username="Snipey" />
           </div>
           <Repos pinned={pinned} />
         </div>
@@ -46,18 +57,17 @@ function Repos({ pinned }: InferGetStaticPropsType<typeof getServerSideProps>) {
           Projects
         </h1>
         <div className="flex flex-wrap justify-center -m-4">
-          {/* {JSON.stringify(pinned)} */}
           {pinned &&
             pinned.map((repo, index) => (
               <div
                 key={index}
-                className="w-full p-4 lg:w-1/3 md:w-1/2 xl:w-1/4"
+                className={`w-full p-4 lg:w-1/3 md:w-1/2 xl:w-1/3 ${roboto_mono.className}`}
               >
                 <div className="h-full overflow-hidden transition border-2 border-gray-200 rounded-lg bg-slate-100 hover:bg-white border-opacity-60">
                   <Link href={repo.url}>
                     <div className="flex flex-col justify-between h-full p-6">
                       <div className="flex-grow">
-                        <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
+                        <h2 className="mb-1 text-xs font-bold tracking-widest text-gray-400 title-font">
                           {repo.primaryLanguage.name}
                         </h2>
                         <h1 className="mb-3 text-lg font-medium title-font text-slate-800">
