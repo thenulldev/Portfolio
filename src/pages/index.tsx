@@ -33,7 +33,7 @@ export default function Home({
             <Profile />
           </div>
           <div className="flex justify-center p-6 mx-6 mt-10 text-lg border-2 border-gray-200 rounded-lg lg:mx-32 xl:mx-60 bg-slate-100">
-            <GitHubCalendar username="Snipey" />
+            
           </div>
           <Repos pinned={pinned} />
         </div>
