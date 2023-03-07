@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AppProps } from "next/app";
 import Link from "next/link";
 import { Roboto_Mono } from "@next/font/google";
-import { PinnedRepos } from "@api/gql";
+import { PinnedItems } from "@api/gql";
 
 const roboto_mono = Roboto_Mono({
   weight: ["400", "700"],
@@ -11,7 +11,7 @@ const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
 });
 
-export function Repos(pinned: PinnedRepos) {
+export function Repos(pinned: PinnedItems) {
   return (
     <section className="my-8 text-gray-600 body-font">
       <div className="px-5 py-0 mx-auto">
@@ -20,7 +20,7 @@ export function Repos(pinned: PinnedRepos) {
         </h1>
         <div className="flex flex-wrap justify-center -m-4">
           {pinned &&
-            pinned.map((repo: PinnedRepos, index) => (
+            pinned.map((repo: PinnedItems, index) => (
               <div
                 key={index}
                 className={`w-full p-4 lg:w-1/3 md:w-1/2 xl:w-1/3 ${roboto_mono.className}`}

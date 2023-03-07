@@ -34,9 +34,9 @@ export default function Home({
           </div>
           <Repos pinned={pinned} />
         </div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <Tree />
-        </div>
+        </div> */}
         <footer className="w-full p-4 font-bold text-center text-white">
           Made with <span className="text-red-600">♥️</span> by Stephen F 2022
         </footer>
